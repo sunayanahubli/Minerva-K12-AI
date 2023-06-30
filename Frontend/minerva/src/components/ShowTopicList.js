@@ -20,7 +20,7 @@ function ShowTopicList() {
 
   const topicList =
     topics.length === 0
-      ? 'there is no topic record!'
+      ? 'No Topic found'
       : topics.map((topic, k) => <TopicCard topic={topic} key={k} />);
 
   return (

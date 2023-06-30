@@ -72,8 +72,7 @@ function ShowTopicDetails(props) {
           </div>
           <br />
           <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Topic's Record</h1>
-            <p className='lead text-center'>View Topic's Info</p>
+            <h1 className='display-4 text-center'>{topic.title}</h1>
             <hr /> <br />
           </div>
           <div className='col-md-10 m-auto'>{TopicItem}</div>
