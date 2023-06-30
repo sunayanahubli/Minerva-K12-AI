@@ -32,25 +32,25 @@
   }
 }
 
-.CreateBook {
+.CreateTopic {
   background-color: #2c3e50;
   min-height: 100vh;
   color: white;
 }
 
-.ShowBookDetails {
+.ShowTopicDetails {
   background-color: #2c3e50;
   min-height: 100vh;
   color: white;
 }
 
-.UpdateBookInfo {
+.UpdateTopicInfo {
   background-color: #2c3e50;
   min-height: 100vh;
   color: white;
 }
 
-.ShowBookList {
+.ShowTopicList {
   background-color: #2c3e50;
   height: 100%;
   width: 100%;
@@ -59,7 +59,7 @@
   color: white;
 }
 
-/* BookList Styles */
+/* TopicList Styles */
 .list {
   display: grid;
   margin: 20px 0 50px 0;

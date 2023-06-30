@@ -2,42 +2,42 @@ import React, { useState, useEffect } from 'react';
 import '../App.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import BookCard from './BookCard';
+import TopicCard from './TopicCard';
 
-function ShowBookList() {
-  const [books, setBooks] = useState([]);
+function ShowTopicList() {
+  const [topics, setTopics] = useState([]);
 
   useEffect(() => {
     axios
-      .get('http://localhost:8082/api/books')
+      .get('http://localhost:8082/api/topics')
       .then((res) => {
-        setBooks(res.data);
+        setTopics(res.data);
       })
       .catch((err) => {
-        console.log('Error from ShowBookList');
+        console.log('Error from ShowTopicList');
       });
   }, []);
 
-  const bookList =
-    books.length === 0
-      ? 'there is no book record!'
-      : books.map((book, k) => <BookCard book={book} key={k} />);
+  const topicList =
+    topics.length === 0
+      ? 'there is no topic record!'
+      : topics.map((topic, k) => <TopicCard topic={topic} key={k} />);
 
   return (
-    <div className='ShowBookList'>
+    <div className='ShowTopicList'>
       <div className='container'>
         <div className='row'>
           <div className='col-md-12'>
             <br />
-            <h2 className='display-4 text-center'>Books List</h2>
+            <h2 className='display-4 text-center'>All Topics</h2>
           </div>
 
           <div className='col-md-11'>
             <Link
-              to='/create-book'
+              to='/create-topic'
               className='btn btn-outline-warning float-right'
             >
-              + Add New Book
+              + Add New Topic
             </Link>
             <br />
             <br />
@@ -45,10 +45,10 @@ function ShowBookList() {
           </div>
         </div>
 
-        <div className='list'>{bookList}</div>
+        <div className='list'>{topicList}</div>
       </div>
     </div>
   );
 }
 
-export default ShowBookList;
+export default ShowTopicList;

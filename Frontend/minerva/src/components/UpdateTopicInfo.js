@@ -3,8 +3,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../App.css';
 
-function UpdateBookInfo(props) {
-  const [book, setBook] = useState({
+function UpdateTopicInfo(props) {
+  const [topic, setTopic] = useState({
     title: '',
     isbn: '',
     author: '',
@@ -18,61 +18,57 @@ function UpdateBookInfo(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8082/api/books/${id}`)
+      .get(`http://localhost:8082/api/topics/${id}`)
       .then((res) => {
-        setBook({
+        setTopic({
           title: res.data.title,
-          isbn: res.data.isbn,
           author: res.data.author,
           description: res.data.description,
           published_date: res.data.published_date,
-          publisher: res.data.publisher,
         });
       })
       .catch((err) => {
-        console.log('Error from UpdateBookInfo');
+        console.log('Error from UpdateTopicInfo');
       });
   }, [id]);
 
   const onChange = (e) => {
-    setBook({ ...book, [e.target.name]: e.target.value });
+    setTopic({ ...topic, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
 
     const data = {
-      title: book.title,
-      isbn: book.isbn,
-      author: book.author,
-      description: book.description,
-      published_date: book.published_date,
-      publisher: book.publisher,
+      title: topic.title,
+      author: topic.author,
+      description: topic.description,
+      published_date: topic.published_date,
     };
 
     axios
-      .put(`http://localhost:8082/api/books/${id}`, data)
+      .put(`http://localhost:8082/api/topics/${id}`, data)
       .then((res) => {
-        navigate(`/show-book/${id}`);
+        navigate(`/show-topic/${id}`);
       })
       .catch((err) => {
-        console.log('Error in UpdateBookInfo!');
+        console.log('Error in UpdateTopicInfo!');
       });
   };
 
   return (
-    <div className='UpdateBookInfo'>
+    <div className='UpdateTopicInfo'>
       <div className='container'>
         <div className='row'>
           <div className='col-md-8 m-auto'>
             <br />
             <Link to='/' className='btn btn-outline-warning float-left'>
-              Show BooK List
+              Show All Topics
             </Link>
           </div>
           <div className='col-md-8 m-auto'>
-            <h1 className='display-4 text-center'>Edit Book</h1>
-            <p className='lead text-center'>Update Book's Info</p>
+            <h1 className='display-4 text-center'>Edit Topic</h1>
+            <p className='lead text-center'>Update Topic's Info</p>
           </div>
         </div>
 
@@ -82,23 +78,10 @@ function UpdateBookInfo(props) {
               <label htmlFor='title'>Title</label>
               <input
                 type='text'
-                placeholder='Title of the Book'
+                placeholder='Title of the Topic'
                 name='title'
                 className='form-control'
-                value={book.title}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='isbn'>ISBN</label>
-              <input
-                type='text'
-                placeholder='ISBN'
-                name='isbn'
-                className='form-control'
-                value={book.isbn}
+                value={topic.title}
                 onChange={onChange}
               />
             </div>
@@ -111,7 +94,7 @@ function UpdateBookInfo(props) {
                 placeholder='Author'
                 name='author'
                 className='form-control'
-                value={book.author}
+                value={topic.author}
                 onChange={onChange}
               />
             </div>
@@ -121,10 +104,10 @@ function UpdateBookInfo(props) {
               <label htmlFor='description'>Description</label>
               <textarea
                 type='text'
-                placeholder='Description of the Book'
+                placeholder='Description of the Topic'
                 name='description'
                 className='form-control'
-                value={book.description}
+                value={topic.description}
                 onChange={onChange}
               />
             </div>
@@ -137,20 +120,7 @@ function UpdateBookInfo(props) {
                 placeholder='Published Date'
                 name='published_date'
                 className='form-control'
-                value={book.published_date}
-                onChange={onChange}
-              />
-            </div>
-            <br />
-
-            <div className='form-group'>
-              <label htmlFor='publisher'>Publisher</label>
-              <input
-                type='text'
-                placeholder='Publisher of the Book'
-                name='publisher'
-                className='form-control'
-                value={book.publisher}
+                value={topic.published_date}
                 onChange={onChange}
               />
             </div>
@@ -160,7 +130,7 @@ function UpdateBookInfo(props) {
               type='submit'
               className='btn btn-outline-info btn-lg btn-block'
             >
-              Update Book
+              Update Topic
             </button>
           </form>
         </div>
@@ -169,4 +139,4 @@ function UpdateBookInfo(props) {
   );
 }
 
-export default UpdateBookInfo;
+export default UpdateTopicInfo;
