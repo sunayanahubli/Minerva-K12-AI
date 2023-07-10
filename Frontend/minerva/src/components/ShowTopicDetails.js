@@ -3,12 +3,8 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
-// import htmlContent from "./presentations/HTML5Point_output/HTML5Point_output.html"
-
 function ShowTopicDetails(props) {
-  
-  // const htmlContent = require(`!!raw-loader!./presentations/HTML5Point_output/HTML5Point_output.html`).default;
-  const [topic, setTopic] = useState({});
+    const [topic, setTopic] = useState({});
 
   const { id } = useParams();
   const navigate = useNavigate();
