@@ -18,7 +18,12 @@ const TopicSchema = new mongoose.Schema({
   updated_date: {
     type: Date,
     default: Date.now
+  },
+  file_url: {
+    type: String,
+    required: true
   }
+
 });
 
 module.exports = Topic = mongoose.model('topic', TopicSchema);

@@ -12,6 +12,7 @@ const CreateTopic = (props) => {
     author: '',
     description: '',
     published_date: '',
+    file_url:'',
   });
 
   const onChange = (e) => {
@@ -95,6 +96,17 @@ const CreateTopic = (props) => {
                   name='published_date'
                   className='form-control'
                   value={topic.published_date}
+                  onChange={onChange}
+                />
+              </div>
+
+              <div className='form-group'>
+                <input
+                  type='text'
+                  placeholder='embedded link'
+                  name='file_url'
+                  className='form-control'
+                  value={topic.file_url}
                   onChange={onChange}
                 />
               </div>

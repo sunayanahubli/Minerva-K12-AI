@@ -3,7 +3,11 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import '../App.css';
 import axios from 'axios';
 
+// import htmlContent from "./presentations/HTML5Point_output/HTML5Point_output.html"
+
 function ShowTopicDetails(props) {
+  
+  // const htmlContent = require(`!!raw-loader!./presentations/HTML5Point_output/HTML5Point_output.html`).default;
   const [topic, setTopic] = useState({});
 
   const { id } = useParams();
@@ -58,8 +62,9 @@ function ShowTopicDetails(props) {
         </tbody>
       </table>
     </div>
+    
   );
-
+ 
   return (
     <div className='ShowTopicDetails'>
       <div className='container'>
@@ -93,11 +98,15 @@ function ShowTopicDetails(props) {
               className='btn btn-outline-info btn-lg btn-block'
             >
               Edit Topic
-            </Link>
+            </Link> 
+          </div>       
+          <div  className='display-4 text-center'>Files (The presentation displayed using OnedDrive)</div>
+        <iframe src="https://onedrive.live.com/embed?resid=87507A1C172B5E25%21110&authkey=!AFWW5maozMYF1Y0&em=2" width="1140px" height="788px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+       
+        {/* ${topic.file_url} */}
+         </div> 
           </div>
-        </div>
       </div>
-    </div>
   );
 }
 

@@ -5,6 +5,7 @@ import CreateTopic from './components/CreateTopic';
 import ShowTopicList from './components/ShowTopicList';
 import ShowTopicDetails from './components/ShowTopicDetails';
 import UpdateTopicInfo from './components/UpdateTopicInfo';
+import ShowPresentation from './components/ShowPresentations';
 
 const App = () => {
   return (
