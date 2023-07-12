@@ -48,7 +48,9 @@ function VerticalTab(props) {
             ? "index1-chosen"
             : activeTabId === 1
             ? "index2-chosen"
-            : "index3-chosen"
+            : activeTabId === 2
+            ?"index3-chosen"
+            :"index4-chosen"
         }
       >
         &nbsp;

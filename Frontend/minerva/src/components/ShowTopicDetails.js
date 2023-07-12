@@ -98,8 +98,8 @@ function ShowTopicDetails(props) {
           </div>       
           <div  className='display-4 text-center'>Files (The presentation is displayed using OneDrive)</div>
         <iframe src="https://onedrive.live.com/embed?resid=87507A1C172B5E25%21110&authkey=!AFWW5maozMYF1Y0&em=2" width="1140px" height="788px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
- 
-        {topic.file_url}
+        {/* <iframe src={topic.file_url} width="1140px" height="788px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe> */}
+        {/* {topic.file_url} */}
       
          </div> 
 

@@ -12,7 +12,7 @@
   top: 0;
   left: 15px;
   display: inline-block;
-  width: 2px;
+  width: 12px;
   /* height: 42px; */
   transition: transform 0.5s;
 }
@@ -21,14 +21,16 @@
   transform: translateY(0px);
 }
 .section__Jobs-container span.index2-chosen {
-  transform: translateY(42px);
+  transform: translateY(50px);
 }
 .section__Jobs-container span.index3-chosen {
-  transform: translateY(84px);
+  transform: translateY(100px);
 }
-
+.section__Jobs-container span.index4-chosen {
+  transform: translateY(150px);
+}
 .section__Jobs-styledTabList {
-  max-width: 130px;
+  max-width: 230px;
 }
 
 .section__Jobs-styledTabList {
