@@ -28,14 +28,9 @@ function ShowTopicList() {
       <div className='container'>
         <div className='row'>
           <div className='col-md-12'>
-            <br />
-            <h2 className='display-4 text-center'>All Topics</h2>
-          </div>
-
-          <div className='col-md-11'>
             <Link
               to='/create-topic'
-              className='btn btn-outline-warning float-right'
+              className='btn btn-outline-warning float-left'
             >
               + Add New Topic
             </Link>

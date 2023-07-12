@@ -11,6 +11,7 @@ function UpdateTopicInfo(props) {
     description: '',
     published_date: '',
     publisher: '',
+    file_url:'',
   });
 
   const { id } = useParams();
@@ -25,6 +26,7 @@ function UpdateTopicInfo(props) {
           author: res.data.author,
           description: res.data.description,
           published_date: res.data.published_date,
+          file_url:res.data.file_url,
         });
       })
       .catch((err) => {
@@ -44,6 +46,7 @@ function UpdateTopicInfo(props) {
       author: topic.author,
       description: topic.description,
       published_date: topic.published_date,
+      file_url: topic.file_url,
     };
 
     axios
@@ -125,6 +128,20 @@ function UpdateTopicInfo(props) {
               />
             </div>
             <br />
+
+            <div className='form-group'>
+              <label htmlFor='file_url'>Embedding link</label>
+              <input
+                type='text'
+                placeholder='File Link'
+                name='file_url'
+                className='form-control'
+                value={topic.file_url}
+                onChange={onChange}
+              />
+            </div>
+            <br />
+
 
             <button
               type='submit'

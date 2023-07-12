@@ -5,7 +5,7 @@ import axios from 'axios';
 
 function ShowTopicDetails(props) {
     const [topic, setTopic] = useState({});
-
+ 
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -61,12 +61,12 @@ function ShowTopicDetails(props) {
     
   );
  
+
   return (
     <div className='ShowTopicDetails'>
       <div className='container'>
         <div className='row'>
-          <div className='col-md-10 m-auto'>
-            <br /> <br />
+          <div className='col-md-12 m-auto'>
             <Link to='/' className='btn btn-outline-warning float-left'>
               Show All Topics
             </Link>
@@ -76,7 +76,7 @@ function ShowTopicDetails(props) {
             <h1 className='display-4 text-center'>{topic.title}</h1>
             <hr /> <br />
           </div>
-          <div className='col-md-10 m-auto'>{TopicItem}</div>
+          <div className='col-md-12 m-auto'>{TopicItem}</div>
           <div className='col-md-6 m-auto'>
             <button
               type='button'
@@ -96,11 +96,21 @@ function ShowTopicDetails(props) {
               Edit Topic
             </Link> 
           </div>       
-          <div  className='display-4 text-center'>Files (The presentation displayed using OnedDrive)</div>
+          <div  className='display-4 text-center'>Files (The presentation is displayed using OneDrive)</div>
         <iframe src="https://onedrive.live.com/embed?resid=87507A1C172B5E25%21110&authkey=!AFWW5maozMYF1Y0&em=2" width="1140px" height="788px" frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
-       
-        {/* ${topic.file_url} */}
+ 
+        {topic.file_url}
+      
          </div> 
+
+         {/* <div>
+      <iframe
+        src={iframeUrl}
+        width={iframeWidth}
+        height={iframeHeight}
+        frameBorder="0"
+      ></iframe>
+    </div> */}
           </div>
       </div>
   );
